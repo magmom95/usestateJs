@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // Store 생성
+
+    const store = new Store({
+        a:10,
+        b:20,
+    });
+
+    // 컴포넌트를 생성
+
+    const component1 = new Component({ subscribe: [store]}) ;
+    const component2 = new Component({ subscribe: [store]}) ;
+
+    // 컴포넌트가 store를 구독
+
+    component1.subscribe(store);
+    component2.subscribe(store);
+
+    store.setState({
+        a: 100,
+        b: 200,
+    });
+
+    store.notify();
+</script>
+</html>
