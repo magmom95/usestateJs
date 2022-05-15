@@ -24,6 +24,7 @@ const render = () => {
   `;
   document.querySelector('#append').addEventListener('click', () => {
     setState({ items: [ ...items, `item${items.length + 1}` ] })
+    console.log(items.length + 1)
   })
 }
 
